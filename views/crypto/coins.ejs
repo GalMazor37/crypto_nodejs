@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main>
+            
+        <%- include('../includes/buttons.ejs') %>
+
+
+            <% if (coinDetails ) { %>
+                <%- include('../includes/coinDetails.ejs') %>
+
+                <% } %>
+            <% if (coinsList ){ if( coinsList.length > 0) { %>
+                <div class="grid">
+                    <% for (let coin of coinsList) { %>
+                            <div class="card__content">
+                                    <%= coin %>
+                            </div>
+                        <% } %>
+                </div>
+                <% } else { %>
+                    <h1>No Coins Found!</h1>
+                    <% } }%>
+    </main>
+<%- include('../includes/end.ejs') %>
+
+
